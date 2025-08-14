@@ -1,0 +1,81 @@
+<div class="container mt-4">
+  <!-- FILTROS -->
+  <div class="row mb-3 align-items-end">
+    <div class="col-3">
+      <label for="filterField" class="form-label">Filtrar por:</label>
+      <select id="filterField" class="form-select" [(ngModel)]="filterField" (change)="onFilterChange()">
+        <option value="name">Nombre</option>
+        <option value="club">Club</option>
+        <option value="position">Posición</option>
+      </select>
+    </div>
+
+    <div class="col-md-7">
+      <label for="filterValue" class="form-label">Buscar:</label>
+      <input id="filterValue" type="text" class="form-control" [(ngModel)]="filterValue" (input)="onFilterChange()"
+        placeholder="Escriba para buscar..." />
+    </div>
+
+    <div class="col-2 text-center">
+      <label class="form-label d-block" style="visibility: hidden;">Exportar</label>
+      <button class="btn btn-outline-primary" (click)="exportToCSV()">📥 Exportar CSV</button>
+    </div>
+  </div>
+
+
+
+
+  <!-- LISTADO DE JUGADORES -->
+  <div *ngIf="players.length > 0; else loading">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4">
+      <div class="col" *ngFor="let player of players">
+        <div class="card h-100 shadow-sm text-center" style="cursor: pointer" (click)="goToPlayer(player.id)">
+          <img [src]="player.faceUrl" class="card-img-top p-2" [alt]="player.name"
+            style="height: 120px; object-fit: contain;" />
+          <div class="card-body p-2">
+            <h6 class="card-title mb-1 text-truncate" style="font-size: 0.85rem;">
+              {{ player.name }}
+            </h6>
+            <p class="card-text mb-1" style="font-size: 0.75rem;">
+              <strong class="me-1">Club:</strong>
+              <span class="text-truncate d-inline-block align-middle"
+                style="max-width: calc(100% - 50px); vertical-align: middle;" [title]="player.club">
+                {{ player.club }}
+              </span><br />
+
+              <strong class="me-1">Pos:</strong>
+              <span class="text-truncate d-inline-block align-middle"
+                style="max-width: calc(100% - 45px); vertical-align: middle;" [title]="player.position">
+                {{ player.position }}
+              </span><br />
+
+              <strong class="me-1">País:</strong>
+              <span class="text-truncate d-inline-block align-middle"
+                style="max-width: calc(100% - 45px); vertical-align: middle;" [title]="player.nationality">
+                {{ player.nationality }}
+              </span>
+            </p>
+          </div>
+          <div class="card-footer py-1">
+            <small class="text-muted">⭐ {{ player.rating }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paginación -->
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <button class="btn btn-outline-primary" (click)="prevPage()" [disabled]="page() === 1">Anterior</button>
+      <span class="fw-semibold">Página {{ page() }}</span>
+      <button class="btn btn-outline-primary" (click)="nextPage()">Siguiente</button>
+    </div>
+  </div>
+
+  <!-- Loading o error -->
+  <ng-template #loading>
+    <div class="alert alert-info text-center">
+      {{ errorMessage || 'Cargando jugadores...' }}
+    </div>
+  </ng-template>
+</div>

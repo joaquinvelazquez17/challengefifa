@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #000;
+
+    background-image:
+        radial-gradient(circle at 40% 30%, rgba(255, 215, 0, 0.2), transparent 70%),
+        repeating-linear-gradient(-45deg,
+            #1a1a1a,
+            #1a1a1a 10px,
+            #000 10px,
+            #000 20px),
+        linear-gradient(120deg, #111 0%, #000 65%, #000 100%);
+    background-blend-mode: screen, overlay, normal;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f5e3a1;
+}

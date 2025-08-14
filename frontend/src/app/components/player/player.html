@@ -1,0 +1,31 @@
+<div class="player-container">
+  <h2 class="text-center mb-4">Detalles del Jugador</h2>
+
+  <ng-container *ngIf="playerSubject | async as player; else loadingOrError">
+    <div class="player-details">
+      <img [src]="player.faceUrl" [alt]="player.name" class="player-image" />
+      <div class="player-info">
+        <h3>{{ player.name }}</h3>
+        <p><strong>🏟️ Club:</strong> {{ player.club }}</p>
+        <p><strong>🎯 Posición:</strong> {{ player.position }}</p>
+        <p><strong>🌎 Nacionalidad:</strong> {{ player.nationality }}</p>
+        <p><strong>⭐ Rating:</strong> {{ player.rating }}</p>
+      </div>
+    </div>
+
+    <h5 class="text-center mb-3">Habilidades del Jugador</h5>
+    <div class="canvas-container">
+      <canvas #skillsRadarChart></canvas>
+    </div>
+  </ng-container>
+
+  <ng-template #loadingOrError>
+    <div class="alert alert-info text-center">
+      {{ errorMessage || 'Cargando jugador...' }}
+    </div>
+  </ng-template>
+
+  <div class="text-center mt-4">
+    <button class="btn btn-outline-primary " (click)="goToEdit()">Modificar Jugador</button>
+  </div>
+</div>

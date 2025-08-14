@@ -1,0 +1,66 @@
+<div class="player-container update-player-form">
+  <h2>Actualizar Jugador</h2>
+
+  <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-row">
+      <label for="name">Nombre</label>
+      <input id="name" type="text" formControlName="name" placeholder="Nombre del jugador" />
+    </div>
+
+    <div class="form-row">
+      <label for="position">Posición</label>
+      <input id="position" type="text" formControlName="position" placeholder="Posición (e.g., CF)" />
+    </div>
+
+    <div class="form-row">
+      <label for="club">Club</label>
+      <input id="club" type="text" formControlName="club" placeholder="Club actual" />
+    </div>
+
+    <div class="form-row">
+      <label for="nationality">Nacionalidad</label>
+      <input id="nationality" type="text" formControlName="nationality" placeholder="Nacionalidad" />
+    </div>
+
+    <div class="form-row form-row--half">
+      <label for="rating">Rating</label>
+      <input id="rating" type="number" formControlName="rating" min="0" max="100" />
+    </div>
+
+    <div class="form-row form-row--half">
+      <label for="speed">Velocidad</label>
+      <input id="speed" type="number" formControlName="speed" min="0" max="100" />
+    </div>
+
+    <div class="form-row form-row--half">
+      <label for="shooting">Disparo</label>
+      <input id="shooting" type="number" formControlName="shooting" min="0" max="100" />
+    </div>
+
+    <div class="form-row form-row--half">
+      <label for="dribbling">Regate</label>
+      <input id="dribbling" type="number" formControlName="dribbling" min="0" max="100" />
+    </div>
+
+    <div class="form-row form-row--half">
+      <label for="passing">Pase</label>
+      <input id="passing" type="number" formControlName="passing" min="0" max="100" />
+    </div>
+
+    <div class="form-row form-row--half">
+      <label for="defending">Defensa</label>
+      <input id="defending" type="number" formControlName="defending" min="0" max="100" />
+    </div>
+
+    <div class="form-row form-row--half">
+      <label for="physic">Físico</label>
+      <input id="physic" type="number" formControlName="physic" min="0" max="100" />
+    </div>
+
+    <button type="submit" [disabled]="playerForm.invalid" class="btn btn-outline-primary ">
+      Actualizar Jugador
+    </button>
+
+  </form>
+</div>

@@ -1,0 +1,84 @@
+<div class="container mt-4">
+  <h3 class="mb-3">Agregar Jugador</h3>
+
+  <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Nombre</label>
+        <input class="form-control" formControlName="name" />
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Club</label>
+        <input class="form-control" formControlName="club" />
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Posición</label>
+        <input class="form-control" formControlName="position" />
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Nacionalidad</label>
+        <input class="form-control" formControlName="nationality" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Rating</label>
+        <input type="number" class="form-control" formControlName="rating" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Velocidad</label>
+        <input type="number" class="form-control" formControlName="speed" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Disparo</label>
+        <input type="number" class="form-control" formControlName="shooting" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Dribbling</label>
+        <input type="number" class="form-control" formControlName="dribbling" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Pases</label>
+        <input type="number" class="form-control" formControlName="passing" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Físico</label>
+        <input type="number" class="form-control" formControlName="physic" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Defensa</label>
+        <input type="number" class="form-control" formControlName="defending" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Potencial</label>
+        <input type="number" class="form-control" formControlName="potential" />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Edad</label>
+        <input type="number" class="form-control" formControlName="age" />
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Foto (URL)</label>
+        <input type="text" class="form-control" formControlName="faceUrl" />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary" [disabled]="playerForm.invalid">
+      Guardar Jugador
+    </button>
+  </form>
+
+  <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+</div>

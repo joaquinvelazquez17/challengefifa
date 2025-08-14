@@ -1,0 +1,13 @@
+<nav class="navbar menu-nav justify-content-center">
+  <div class="btn-group" role="group" aria-label="Botones de menú">
+    <a class="btn-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Jugadores
+    </a>
+    <a class="btn-link" routerLink="/create-player" routerLinkActive="active">
+      Crear Jugador
+    </a>
+    <button class="btn-link" (click)="logout()">
+      Cerrar sesión
+    </button>
+  </div>
+</nav>

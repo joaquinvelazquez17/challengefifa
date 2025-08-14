@@ -1,0 +1,52 @@
+.menu-nav {
+    text-align: center;
+    margin: 20px 0;
+    background: transparent;
+}
+
+.menu-nav .btn-group {
+    gap: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Aumentar la especificidad con el contenedor */
+.menu-nav .btn-group a.btn-link,
+.menu-nav .btn-group button.btn-link {
+    color: #f5e3a1 !important;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: none;
+    text-decoration: none;
+    text-shadow: 0 0 3px rgba(255, 215, 0, 0.8);
+}
+
+.menu-nav .btn-group a.btn-link:hover,
+.menu-nav .btn-group button.btn-link:hover,
+.menu-nav .btn-group a.btn-link:focus,
+.menu-nav .btn-group button.btn-link:focus {
+    color: #ffffff;
+    background-color: rgba(255, 215, 0, 0.15);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    outline: none;
+}
+
+.menu-nav .btn-group a.btn-link.active,
+.menu-nav .btn-group a.btn-link[aria-current="page"] {
+    color: #ffd700;
+    text-decoration: underline;
+    text-shadow: 0 0 10px #ffd700;
+    cursor: default;
+    box-shadow: 0 0 15px #ffd700;
+    background-color: rgba(255, 215, 0, 0.3);
+}

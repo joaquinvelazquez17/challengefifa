@@ -1,0 +1,100 @@
+/* CONTENEDOR PRINCIPAL */
+.container {
+    color: #f5e3a1;
+}
+
+/* TÍTULO */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f5e3a1;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+}
+
+/* SELECT E INPUT */
+.form-select,
+.form-control {
+    background-color: #1a1a1a;
+    color: #f5e3a1;
+    border: 1px solid #444;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: gold;
+    box-shadow: 0 0 5px gold;
+}
+
+/* BOTÓN DE EXPORTAR Y PAGINACIÓN */
+.btn-outline-primary {
+    color: #f5e3a1;
+    border-color: gold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: gold;
+    color: #000;
+    border-color: gold;
+}
+
+/* TARJETAS DE JUGADORES */
+.card {
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid #333;
+    /* borde base oscuro */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+    border-radius: 0.75rem;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgb(175, 159, 70);
+    /* borde dorado al hacer hover */
+    box-shadow:
+        0 0 8px rgba(255, 215, 0, 0.9),
+        /* resplandor pequeño, intenso */
+        0 0 20px rgba(255, 215, 0, 0.7),
+        /* resplandor medio */
+        0 0 35px rgba(255, 215, 0, 0.5);
+    /* resplandor amplio y difuso */
+}
+
+.card-title {
+    color: #f5e3a1;
+}
+
+.card-text {
+    color: #d6c98d;
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: 1px solid #333;
+    color: #ccc;
+
+}
+
+/* PAGINACIÓN */
+.d-flex span {
+    color: #f5e3a1;
+}
+
+/* ALERTA */
+.alert-info {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #f5e3a1;
+}
+
+input::placeholder {
+    color: #f5e3a1;
+    background-color: transparent;
+    /* no funciona para background, sólo color */
+}
